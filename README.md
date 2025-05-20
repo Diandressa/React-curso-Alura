@@ -31,6 +31,8 @@ https://necolas.github.io/normalize.css/
 
 Criamos um componente com o estilo do resete e exportamos (createGlobalStyle). Importamos esse componente no App.tsx
 
+## CSS-in-JS
+
 <details>
 
   <summary>CSS-in-JS</summary>
@@ -42,3 +44,7 @@ Criamos um componente com o estilo do resete e exportamos (createGlobalStyle). I
 
   Resumindo, CSS-in-JS é quando escrevemos os estilos dentro do JavaScript, permitindo mais dinamismo e estilos específicos para cada componente. Já o SCSS é uma extensão do CSS que adiciona recursos avançados, mas precisa ser convertido em CSS antes de ser usado pelo navegador.
 </details>
+
+## Observações
+
+O logo está na pasta public para manter uma URL da imagem amigável para o SEO

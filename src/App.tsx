@@ -6,7 +6,9 @@ const FundoGradiente = () => {
 */
 
 import styled from "styled-components";
-import EstilosGlobais from "./componentes/Globais";
+import EstilosGlobais from "./componentes/EstilosGlobais";
+import Cabecalho from "./componentes/Cabecalho";
+import BarraLateral from "./componentes/BarraLateral";
 
 //Componente React Estilizado
 //depois do ponto colocamos a tag que queremos estilizar e abrimos a crase para passar o estilo
@@ -23,6 +25,8 @@ function App() {
       <FundoGradiente>
         {/*<!-- Normalize importado como Component Style */}
         <EstilosGlobais/>
+        <Cabecalho/>
+        <BarraLateral/>
       </FundoGradiente>
     </>
   )
