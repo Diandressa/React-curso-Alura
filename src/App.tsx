@@ -9,6 +9,7 @@ import styled from "styled-components";
 import EstilosGlobais from "./componentes/EstilosGlobais";
 import Cabecalho from "./componentes/Cabecalho";
 import BarraLateral from "./componentes/BarraLateral";
+import Banner from "./componentes/Banner";
 
 //Componente React Estilizado
 //depois do ponto colocamos a tag que queremos estilizar e abrimos a crase para passar o estilo
@@ -27,6 +28,9 @@ function App() {
         <EstilosGlobais/>
         <Cabecalho/>
         <BarraLateral/>
+        <main>
+          <Banner/>
+        </main>
       </FundoGradiente>
     </>
   )
