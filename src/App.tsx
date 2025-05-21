@@ -19,6 +19,11 @@ const FundoGradiente = styled.div`
   min-height: 100vh;
 `
 
+const MainContainer = styled.main`
+  display: flex;
+  gap: 24;
+`
+
 function App() {
 
   return (
@@ -27,10 +32,10 @@ function App() {
         {/*<!-- Normalize importado como Component Style */}
         <EstilosGlobais/>
         <Cabecalho/>
-        <BarraLateral/>
-        <main>
-          <Banner/>
-        </main>
+        <MainContainer>
+          <BarraLateral/>
+          <Banner backgroundImage={"./src/assets/banner.png"} texto={"A galeria mais completa de fotos do espaço!"}/>
+        </MainContainer>
       </FundoGradiente>
     </>
   )

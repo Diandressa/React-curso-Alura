@@ -1,33 +1,41 @@
-import styled from "styled-components";
-import img from '../../assets/banner.png';
+import styled from "styled-components"
 
-const ContainerEstilizado = styled.div`
-    width: 70vw;
-    position: absolute;
-    right: 0;
+interface ImagemProps{
+    $backgroundImage: string;
+}
+
+interface Props{
+    backgroundImage: string;
+    texto: string
+}
+
+const FigureEstilizada = styled.figure<ImagemProps>`
+    background-image: ${props => `url(${props.$backgroundImage})`};
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    display:flex;
+    align-items: center;
+    min-height: 328px;
+    margin: 0;
+    border-radius: 20px;
+    max-width: 100%;
+    background-size: cover;
 `
 
-const BannerEstilizado = styled.img`
-    width: 100%;
-    position: relative;
-    border-radius: 10px;
+const TextoEstilizado = styled.h1`
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #ffffff;
+    max-width: 300px;
+    padding: 0 64px;
 `
 
-const TextoEstilizado = styled.p`
-    position: absolute;
-    top: 0;
-    color: #fff;
-    padding: 1.5rem;
-    font-size: 2em;
-    width: 30%;
-`
-
-const Banner = () => {
+const Banner = (props:Props) => {
     return(
-        <ContainerEstilizado>
-            <BannerEstilizado src={img} alt="Banner imagem"/>
-            <TextoEstilizado>A galeria mais completa de fotos do espaço!</TextoEstilizado>
-        </ContainerEstilizado>
+        <FigureEstilizada $backgroundImage={props.backgroundImage}>
+            <TextoEstilizado>{props.texto}</TextoEstilizado>
+        </FigureEstilizada>
     )
 }
 
