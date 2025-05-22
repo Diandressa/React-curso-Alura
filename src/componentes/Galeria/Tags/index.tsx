@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import styled from 'styled-components'
 import tags from './tags.json'
 
@@ -44,6 +45,11 @@ const Tags = () => {
                 {tags.map(tag => <Tag key={tag.id}>{tag.titulo}</Tag>)}
             </Div>
         </TagsContainer>
+=======
+const Tags = () => {
+    return(
+        <p>Tags</p>
+>>>>>>> parent of a1f2623 (tags)
     )
 }
 
