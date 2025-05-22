@@ -48,3 +48,7 @@ Criamos um componente com o estilo do resete e exportamos (createGlobalStyle). I
 ## Observações
 
 O logo está na pasta public para manter uma URL da imagem amigável para o SEO
+
+## Projeto Original
+
+https://github.com/alura-cursos/space-app/tree/aula-1 

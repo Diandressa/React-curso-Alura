@@ -10,18 +10,30 @@ const GaleriaContainer = styled.div`
 const SecaoFluida = styled.section`
     flex-grow: 1;
 `
+interface Foto {
+  titulo: string;
+  fonte: string;
+  path: string;
+  id: string;
+  tagId: number;
+}
 
-const Galeria = () => {
+interface FotosProps {
+    fotos:Foto[];
+}
+
+const Galeria = ({fotos = [] }:FotosProps) => {
     return (
         <>
             <Tags/>
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
+                    <ul>
+                        {fotos.map(foto => <li>{foto.titulo}</li>)}
+                    </ul>
                 </SecaoFluida>
-                <Populares>
-
-                </Populares>
+                <Populares/>
             </GaleriaContainer>
         </>
     )
