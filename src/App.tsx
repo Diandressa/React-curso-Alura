@@ -11,6 +11,8 @@ import Cabecalho from "./componentes/Cabecalho";
 import BarraLateral from "./componentes/BarraLateral";
 import Banner from "./componentes/Banner";
 import Galeria from "./componentes/Galeria";
+import fotos from "./fotos.json";
+import { useState } from "react";
 
 const AppContainer = styled.div`
   width: 1140px;
@@ -37,7 +39,8 @@ const ConteudoGaleria = styled.section`
   flex-grow: 1;
 `
 
-function App() {
+const App = () => {
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
 
   return (
     <>
@@ -50,7 +53,7 @@ function App() {
             <BarraLateral/>
             <ConteudoGaleria>
               <Banner backgroundImage={"./src/assets/banner.png"} texto={"A galeria mais completa de fotos do espaço!"}/>
-              <Galeria/>
+              <Galeria fotos={fotosDaGaleria}/>
             </ConteudoGaleria>
           </MainContainer>
         </AppContainer>

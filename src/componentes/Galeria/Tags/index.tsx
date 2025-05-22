@@ -1,33 +1,51 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import tags from './tags.json'
 
-const ContainerSection = styled.section`
+const TagsContainer = styled.section`
     display: flex;
     align-items: center;
-    color: #fff;
-    width: 100%;
+    gap: 64px;
+    margin-top: 56px;
 `
-const ContainerTags = styled.section`
-    button{
-        margin: 0 .5rem;
-        border: 1px solid #7b78e5;
-        border-radius: 10px;
-        padding: .3rem 1rem;
-        background: rgba(255, 255, 255, 0.336);
-        color: #fff;
-        cursor: pointer;
+const TagTitulo = styled.h3`
+    color: #D9D9D9;
+    font-size: 24px;
+    margin: 0;
+`
+
+const Tag = styled.button`
+    font-size: 24px;
+    color: #FFFFFF;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+
+    &:hover {
+      border-color: #C98CF1;
     }
 `
 
+const Div = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    //justify-content: end;
+`
+
 const Tags = () => {
-    return(
-        <ContainerSection>
-            <p>Busque por tags:</p>
-            <ContainerTags>
-                {tags.map(tag => <button key={tag.id}>{tag.titulo}</button>)}
-            </ContainerTags>
-        </ContainerSection>
+    return (
+        <TagsContainer>
+            <TagTitulo>Busque por tags:</TagTitulo>
+            <Div>
+                {tags.map(tag => <Tag key={tag.id}>{tag.titulo}</Tag>)}
+            </Div>
+        </TagsContainer>
     )
 }
+
 
 export default Tags;
