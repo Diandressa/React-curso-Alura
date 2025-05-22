@@ -10,6 +10,13 @@ import EstilosGlobais from "./componentes/EstilosGlobais";
 import Cabecalho from "./componentes/Cabecalho";
 import BarraLateral from "./componentes/BarraLateral";
 import Banner from "./componentes/Banner";
+import Galeria from "./componentes/Galeria";
+
+const AppContainer = styled.div`
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+`
 
 //Componente React Estilizado
 //depois do ponto colocamos a tag que queremos estilizar e abrimos a crase para passar o estilo
@@ -21,7 +28,13 @@ const FundoGradiente = styled.div`
 
 const MainContainer = styled.main`
   display: flex;
-  gap: 24;
+  gap: 24px;
+`
+
+const ConteudoGaleria = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `
 
 function App() {
@@ -31,11 +44,16 @@ function App() {
       <FundoGradiente>
         {/*<!-- Normalize importado como Component Style */}
         <EstilosGlobais/>
-        <Cabecalho/>
-        <MainContainer>
-          <BarraLateral/>
-          <Banner backgroundImage={"./src/assets/banner.png"} texto={"A galeria mais completa de fotos do espaço!"}/>
-        </MainContainer>
+        <AppContainer>
+          <Cabecalho/>
+          <MainContainer>
+            <BarraLateral/>
+            <ConteudoGaleria>
+              <Banner backgroundImage={"./src/assets/banner.png"} texto={"A galeria mais completa de fotos do espaço!"}/>
+              <Galeria/>
+            </ConteudoGaleria>
+          </MainContainer>
+        </AppContainer>
       </FundoGradiente>
     </>
   )

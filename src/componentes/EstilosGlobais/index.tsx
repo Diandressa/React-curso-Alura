@@ -21,10 +21,6 @@ font-family: GandhiSansRegular;
 }
 body {
   margin: 0;
-  min-height: 100vh;
-}
-aside{
-  position: fixed;
 }
 main {
   display: block;
