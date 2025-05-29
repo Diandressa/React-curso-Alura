@@ -6,6 +6,13 @@ import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
     display:flex;
+    justify-content: space-between;
+`
+
+const ImagemContainer = styled.div`
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 `
 
 const SecaoFluida = styled.section`
@@ -30,10 +37,12 @@ const Galeria = ({fotos = [] }:FotosProps) => {
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
-                    {
-                        fotos.map(foto => <Imagem key={foto.id} foto={foto}/>)
-                        //manda foto, e cada foto é um objeto do json
-                    }
+                    <ImagemContainer>
+                        {
+                            fotos.map(foto => <Imagem key={foto.id} foto={foto}/>)
+                            //manda foto, e cada foto é um objeto do json
+                        }
+                    </ImagemContainer>
                 </SecaoFluida>
                 <Populares/>
             </GaleriaContainer>

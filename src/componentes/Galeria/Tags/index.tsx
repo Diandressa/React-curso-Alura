@@ -5,7 +5,8 @@ import tags from './tags.json'
 const TagsContainer = styled.section`
     display: flex;
     align-items: center;
-    gap: 64px;
+    justify-content: space-between;
+    //gap: 64px;
     margin-top: 56px;
 `
 const TagTitulo = styled.h3`

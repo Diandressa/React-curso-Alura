@@ -14,9 +14,11 @@ interface ImagemProps {
 } 
 
 const Figure = styled.figure`
-    background-color: #fff;
+    //background-color: #fff;
     border-radius: 20px;
     max-width: 100%;
+    margin: 0;
+    height: 100%;
 
     figcaption{
         background-color: #001634;
@@ -42,9 +44,11 @@ const Figure = styled.figure`
 `  
 
 const Img = styled.img`
-    width: 100%;
     border-radius: 20px 20px 0 0;
+    width: 360px;
+    height:290px;
     display: block;
+    object-fit: cover;
 `
 
 const Rodape = styled.footer`
