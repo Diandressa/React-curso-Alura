@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 import styled from 'styled-components'
 import tags from './tags.json'
+
 
 const TagsContainer = styled.section`
     display: flex;
@@ -41,15 +41,10 @@ const Tags = () => {
     return (
         <TagsContainer>
             <TagTitulo>Busque por tags:</TagTitulo>
-            <Div>
-                {tags.map(tag => <Tag key={tag.id}>{tag.titulo}</Tag>)}
-            </Div>
+                <Div>
+                    {tags.map(tag => <Tag key={tag.id}>{tag.titulo}</Tag>)}
+                </Div>
         </TagsContainer>
-=======
-const Tags = () => {
-    return(
-        <p>Tags</p>
->>>>>>> parent of a1f2623 (tags)
     )
 }
 

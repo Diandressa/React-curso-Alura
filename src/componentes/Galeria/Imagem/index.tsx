@@ -1,19 +1,38 @@
-interface FotoProps {
-    foto:string
+import styled from "styled-components";
+
+interface Foto {
+  titulo: string;
+  fonte: string;
+  path: string;
+  id: string;
+  tagId: number;
 }
-const Imagem = ({foto}) => {
+
+interface FotosProps {
+    fotos:Foto[];
+} 
+
+const SecaoFluida = styled.section`
+    flex-grow: 1;
+`
+
+const Imagem = ({fotos = []}:FotosProps) => {
     return(
-        <figure>
-            <img src="" alt="" />
-            <figcaption>
-                <h3>Título</h3>
-                <footer>
-                    <p>fonte</p>
-                    <button>favorito</button>
-                    <button>expandir</button>
-                </footer>
-            </figcaption>
-        </figure>
+        <>
+            <Tags/>
+            <GaleriaContainer>
+                <SecaoFluida>
+                    <Titulo>Navegue pela galeria</Titulo>
+                    <ul>
+                        {fotos.map(foto => <li>{foto.titulo}</li>)}
+                    </ul>
+                </SecaoFluida>
+                <Populares>
+
+                </Populares>
+                <Populares/>
+            </GaleriaContainer>
+        </>
     )
 }
 
