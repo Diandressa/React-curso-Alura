@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 interface Foto {
   titulo: string;
   fonte: string;
@@ -11,28 +9,19 @@ interface Foto {
 interface FotosProps {
     fotos:Foto[];
 } 
-
-const SecaoFluida = styled.section`
-    flex-grow: 1;
-`
-
-const Imagem = ({fotos = []}:FotosProps) => {
+const Imagem = ({foto}:FotosProps) => {
     return(
-        <>
-            <Tags/>
-            <GaleriaContainer>
-                <SecaoFluida>
-                    <Titulo>Navegue pela galeria</Titulo>
-                    <ul>
-                        {fotos.map(foto => <li>{foto.titulo}</li>)}
-                    </ul>
-                </SecaoFluida>
-                <Populares>
-
-                </Populares>
-                <Populares/>
-            </GaleriaContainer>
-        </>
+        <figure>
+            <img src="" alt="" />
+            <figcaption>
+                <h3>Título</h3>
+                <footer>
+                    <p>fonte</p>
+                    <button>favorito</button>
+                    <button>expandir</button>
+                </footer>
+            </figcaption>
+        </figure>
     )
 }
 
