@@ -6,13 +6,13 @@ interface Foto {
   tagId: number;
 }
 
-interface FotosProps {
-    fotos:Foto[];
+interface ImagemProps {
+    foto:Foto;
 } 
-const Imagem = ({foto}:FotosProps) => {
+const Imagem = ({foto}:ImagemProps) => {
     return(
         <figure>
-            <img src="" alt="" />
+            <img src={foto.path} alt={foto.titulo} />
             <figcaption>
                 <h3>Título</h3>
                 <footer>

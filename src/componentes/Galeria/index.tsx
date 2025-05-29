@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Titulo from "../Titulo";
 import Populares from "./Polulares";
 import Tags from "./Tags";
+import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
     display:flex;
@@ -29,9 +30,10 @@ const Galeria = ({fotos = [] }:FotosProps) => {
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
-                    <ul>
-                        {fotos.map(foto => <li>{foto.titulo}</li>)}
-                    </ul>
+                    {
+                        fotos.map(foto => <Imagem key={foto.id} foto={foto}/>)
+                        //manda foto, e cada foto é um objeto do json
+                    }
                 </SecaoFluida>
                 <Populares/>
             </GaleriaContainer>
