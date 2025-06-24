@@ -58,7 +58,6 @@ const Div = styled.div`
     
 `
 
-
 const Imagem = ({foto}:ImagemProps) => {
     return(
         <Figure>
@@ -69,8 +68,8 @@ const Imagem = ({foto}:ImagemProps) => {
                     <p>{foto.fonte}</p>
                 </Div>
                 <Rodape>
-                    <ButtonImage src="./icones/favorito.png" alt="Icone favorito"/>
-                    <ButtonImage src="./icones/expandir.png" alt="Icone expandir"/>
+                    <ButtonImage src="./icones/favorito.png" alt="Icone favorito" $expandir={expandir}/>
+                    <ButtonImage src="./icones/expandir.png" alt="Icone expandir" $expandir={expandir}/>
                 </Rodape>
             </figcaption>
         </Figure>

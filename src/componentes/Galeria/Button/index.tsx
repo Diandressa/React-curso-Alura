@@ -3,6 +3,11 @@ import styled from "styled-components";
 interface buttonProps{
     src:string;
     alt:string;
+    expandir?:boolean
+}
+
+interface expandirProps {
+    $expandir?:string
 }
 
 const Button = styled.button`
@@ -15,9 +20,9 @@ const Button = styled.button`
         margin-left: 5px;
     }
 `
-const ButtonImage = ({src, alt}:buttonProps) => {
+const ButtonImage = ({src, alt, expandir}:buttonProps) => {
     return(
-        <Button>
+        <Button $expandir={expandir}>
             <img src={src} alt={alt} /> 
         </Button>
     )
