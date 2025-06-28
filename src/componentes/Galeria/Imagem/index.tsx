@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ButtonImage from "../Button";
+import BotaoIcone from "../../BotaoIcone";
 
 interface Foto {
   titulo: string;
@@ -11,65 +11,62 @@ interface Foto {
 
 interface ImagemProps {
     foto:Foto;
+    expandida?: boolean;
 } 
 
-const Figure = styled.figure`
-    //background-color: #fff;
-    border-radius: 20px;
+interface ExpandirProps{
+    $expandida?:boolean;
+}
+
+const Figure = styled.figure<ExpandirProps>`
+    width: ${props => props.$expandida ? '90%' : '460px'};
     max-width: 100%;
     margin: 0;
-    height: 100%;
-
-    figcaption{
+    display: flex;
+    flex-direction: column;
+    & > img {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    figcaption {
         background-color: #001634;
-        color: #fff;
-        border-radius: 0 0 20px 20px;
-        padding: 1rem;
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-
-        p {
-            margin-bottom: 10px;
-            margin-top: 0px;
+        border-radius: 0px 0px 20px 20px;
+        color: white;
+        box-sizing: border-box;
+        padding: 12px;
+        h3 {
+            font-family: 'GandhiSansBold';
+        }
+        h4 {
+            flex-grow: 1;
+        }
+        h3, h4 {
+            margin: 0;
+            font-size: 16px;
         }
     }
-
-    h3{
-        margin: 0;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-    }
-`  
-
-const Img = styled.img`
-    border-radius: 20px 20px 0 0;
-    width: 360px;
-    height:290px;
-    display: block;
-    object-fit: cover;
 `
 
 const Rodape = styled.footer`
-    
-`
-const Div = styled.div`
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
-const Imagem = ({foto}:ImagemProps) => {
+const Imagem = ({foto, expandida = false}:ImagemProps) => {
     return(
-        <Figure>
-            <Img src={foto.path} alt={foto.titulo} />
+        <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+            <img src={foto.path} alt={foto.titulo} />
             <figcaption>
-                <Div>
-                    <h3>{foto.titulo}</h3>
-                    <p>{foto.fonte}</p>
-                </Div>
+                <h3>{foto.titulo}</h3>
                 <Rodape>
-                    <ButtonImage src="./icones/favorito.png" alt="Icone favorito" $expandir={expandir}/>
-                    <ButtonImage src="./icones/expandir.png" alt="Icone expandir" $expandir={expandir}/>
+                    <h4>{foto.fonte}</h4>
+                    <BotaoIcone>
+                        <img src="/icones/favorito.png" alt="Icone de favorito" />
+                    </BotaoIcone>
+                    {!expandida && <BotaoIcone aria-hidden={expandida}>
+                         <img src="/icones/expandir.png" alt="Icone de expandir" />
+                    </BotaoIcone>}
                 </Rodape>
             </figcaption>
         </Figure>
