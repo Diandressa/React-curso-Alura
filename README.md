@@ -52,4 +52,4 @@ O logo está na pasta public para manter uma URL da imagem amigável para o SEO
 ## Projeto Original
 
 https://github.com/alura-cursos/space-app/tree/aula-1 
-Figma: 
+Figma: https://www.figma.com/community/file/1410401759476892833/react-arquivos-estaticos-com-integracao-de-conceito-area-de-component-spaceapp 
