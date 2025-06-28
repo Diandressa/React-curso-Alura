@@ -20,9 +20,9 @@ const Button = styled.button`
         margin-left: 5px;
     }
 `
-const ButtonImage = ({src, alt, expandir}:buttonProps) => {
+const ButtonImage = ({src, alt}:buttonProps) => {
     return(
-        <Button $expandir={expandir}>
+        <Button>
             <img src={src} alt={alt} /> 
         </Button>
     )
