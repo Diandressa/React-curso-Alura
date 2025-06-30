@@ -13,6 +13,15 @@ import Banner from "./componentes/Banner";
 import Galeria from "./componentes/Galeria";
 import fotos from "./fotos.json";
 import { useState } from "react";
+import ModalZoom from "./componentes/ModalZoom";
+
+interface Foto {
+  titulo: string;
+  fonte: string;
+  path: string;
+  id: string;
+  tagId: number;
+}
 
 const AppContainer = styled.div`
   width: 1140px;
@@ -41,6 +50,7 @@ const ConteudoGaleria = styled.section`
 
 const App = () => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
+  const [fotoSelecionada, setFotoSelecionada] = useState<Foto | null>(null)
 
   return (
     <>
@@ -53,10 +63,14 @@ const App = () => {
             <BarraLateral/>
             <ConteudoGaleria>
               <Banner backgroundImage={"./src/assets/banner.png"} texto={"A galeria mais completa de fotos do espaço!"}/>
-              <Galeria fotos={fotosDaGaleria}/>
+              <Galeria 
+                fotos={fotosDaGaleria}
+                clickFotoSelecionada={foto => setFotoSelecionada(foto)}
+              />
             </ConteudoGaleria>
           </MainContainer>
         </AppContainer>
+        <ModalZoom foto={fotoSelecionada}/>
       </FundoGradiente>
     </>
   )

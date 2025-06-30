@@ -12,6 +12,7 @@ interface Foto {
 interface ImagemProps {
     foto:Foto;
     expandida?: boolean;
+     clickZoom?: (foto: Foto) => void;
 } 
 
 interface ExpandirProps{
@@ -53,7 +54,7 @@ const Rodape = styled.footer`
     align-items: center;
 `
 
-const Imagem = ({foto, expandida = false}:ImagemProps) => {
+const Imagem = ({foto, expandida = false, clickZoom}:ImagemProps) => {
     return(
         <Figure $expandida={expandida} id={`foto-${foto.id}`}>
             <img src={foto.path} alt={foto.titulo} />
@@ -64,7 +65,7 @@ const Imagem = ({foto, expandida = false}:ImagemProps) => {
                     <BotaoIcone>
                         <img src="/icones/favorito.png" alt="Icone de favorito" />
                     </BotaoIcone>
-                    {!expandida && <BotaoIcone aria-hidden={expandida}>
+                    {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => clickZoom?.(foto)}>
                          <img src="/icones/expandir.png" alt="Icone de expandir" />
                     </BotaoIcone>}
                 </Rodape>

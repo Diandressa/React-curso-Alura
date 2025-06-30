@@ -28,9 +28,10 @@ interface Foto {
 
 interface FotosProps {
     fotos:Foto[];
+    clickFotoSelecionada: (foto: Foto) => void;
 }
 
-const Galeria = ({fotos = [] }:FotosProps) => {
+const Galeria = ({fotos = [], clickFotoSelecionada }:FotosProps) => {
     return (
         <>
             <Tags/>
@@ -39,7 +40,12 @@ const Galeria = ({fotos = [] }:FotosProps) => {
                     <Titulo>Navegue pela galeria</Titulo>
                     <ImagemContainer>
                         {
-                            fotos.map(foto => <Imagem key={foto.id} foto={foto}/>)
+                            fotos.map(foto => 
+                            <Imagem 
+                                clickZoom = {clickFotoSelecionada}
+                                key={foto.id} 
+                                foto={foto}
+                            />)
                             //manda foto, e cada foto é um objeto do json
                         }
                     </ImagemContainer>
